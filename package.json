@@ -9,7 +9,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --aot --prod --build-optimizer",
     "test": "ng test",
     "lint": "ng lint",
     "start-dev": "node server.js",
