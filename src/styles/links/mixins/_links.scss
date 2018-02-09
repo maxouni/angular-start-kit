@@ -1,0 +1,41 @@
+@import "./variables";
+
+@function maybe-important($value, $important: false) {
+  @if ($important) {
+    @return $value + !important;
+  } @else {
+    @return $value;
+  }
+}
+
+@mixin link-border ($color, $important: false, $opacity: 0.3) {
+  border-color: maybe-important($color, $important);
+  border-color: maybe-important(rgba($color, .3), $important);
+}
+
+@mixin link-color($color, $important: false, $opacity: 1, $opacity-border: 0.3) {
+  color: maybe-important($color, $important);
+  @if $opacity != 1 {
+    color: maybe-important(rgba($color, $opacity), $important);
+  }
+  @include link-border($color, $important, $opacity);
+}
+
+@mixin this-link ($color, $hover, $opacity: 1, $opacity-hover: 1) {
+  @include link-color($color);
+  &:visited {
+    @include link-color($color, false, $opacity);
+  }
+  &:hover {
+    @include link-color($hover, true, $opacity-hover);
+  }
+}
+
+@mixin add-link($color: $link-color, $hover: $link-color-hover, $opacity: 1, $opacity-hover: 1) {
+  a, .pseudo {
+    @include this-link($color, $hover, $opacity, $opacity-hover);
+  }
+  b {
+    color: $color;
+  }
+}
