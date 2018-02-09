@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyA4oJDlNeZYu-loFtLHwAp2CIjX6IRKkkU',
+    authDomain: 'turnir-pro-fd11b.firebaseapp.com',
+    databaseURL: 'https://turnir-pro-fd11b.firebaseio.com',
+    projectId: 'turnir-pro-fd11b',
+    storageBucket: 'turnir-pro-fd11b.appspot.com',
+    messagingSenderId: '1074636883807'
+  }
 };
