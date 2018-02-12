@@ -114,7 +114,11 @@ a.active {
   border-bottom: none;
 }
 
-// And undo these styles for placeholder links/named anchors (without href)
+.a--brand{
+  @include link-color($link-color-brand);
+}
+
+// / And undo these styles for placeholder links/named anchors (without href)
 // which have not been made explicitly keyboard-focusable (without tabindex).
 // It would be more straightforward to just use a[href] in previous block, but that
 // causes specificity issues in many other styles that are too complex to fix.

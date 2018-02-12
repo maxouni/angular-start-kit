@@ -109,6 +109,10 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: $paragraph-margin-bottom;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
 }
 
 // Abbreviations
@@ -136,7 +140,7 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: $paragraph-margin-bottom;
 }
 
 ol ol,

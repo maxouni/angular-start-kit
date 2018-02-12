@@ -1,0 +1,19 @@
+<div class="container-fluid container-fluid--layout">
+  <div class="row">
+    <div class="col">
+      <h2>Войти в социальные сети</h2>
+      <form (ngSubmit)="onSignInGoogle(g)" #g="ngForm">
+        <button class="btn btn-primary" type="submit" [disabled]="!g.valid"><span class="fa fa-google"></span> Login with your Google Account</button>
+      </form>
+      <!--<form (ngSubmit)="onSignInTwitter(t)" #t="ngForm">-->
+        <!--<button class="btn btn-block btn-social btn-twitter" type="submit" [disabled]="!t.valid"><span class="fa fa-twitter"></span> Login with your Twitter Account</button>-->
+      <!--</form>-->
+      <!--<form (ngSubmit)="onSignInFacebook(fb)" #fb="ngForm">-->
+        <!--<button class="btn btn-block btn-social btn-facebook" type="submit" [disabled]="!fb.valid"><span class="fa fa-facebook"></span> Login with your Facebook Account</button>-->
+      <!--</form>-->
+      <!--<form (ngSubmit)="onSignInGithub(gh)" #gh="ngForm">-->
+        <!--<button class="btn btn-block btn-social btn-github" type="submit" [disabled]="!gh.valid"><span class="fa fa-github"></span> Login with your Github Account</button>-->
+      <!--</form>-->
+    </div>
+  </div>
+</div>

@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyA4oJDlNeZYu-loFtLHwAp2CIjX6IRKkkU',
-    authDomain: 'turnir-pro-fd11b.firebaseapp.com',
-    databaseURL: 'https://turnir-pro-fd11b.firebaseio.com',
-    projectId: 'turnir-pro-fd11b',
-    storageBucket: 'turnir-pro-fd11b.appspot.com',
-    messagingSenderId: '1074636883807'
+    apiKey: "AIzaSyCbYBd3Gu_fExn3_buzlP_Q4Yxu8U8Tz7U",
+    authDomain: "madbrothers-auth.firebaseapp.com",
+    databaseURL: "https://madbrothers-auth.firebaseio.com",
+    projectId: "madbrothers-auth",
+    storageBucket: "madbrothers-auth.appspot.com",
+    messagingSenderId: "574391449346"
   }
 };
