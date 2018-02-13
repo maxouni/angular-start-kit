@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-guideline',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuidelineComponent implements OnInit {
 
-  constructor() { }
+  public deviceInfo: any;
+
+  constructor(private deviceService: DeviceDetectorService) { }
 
   ngOnInit() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
   }
 
 }

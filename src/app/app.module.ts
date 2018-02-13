@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { GuidelineComponent } from './guideline/guideline.component';
 import {AuthModule} from './auth/auth.module';
 import {RouterModule} from '@angular/router';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {RouterModule} from '@angular/router';
     HttpClientModule,
     SharedModule,
     AuthModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    DeviceDetectorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
