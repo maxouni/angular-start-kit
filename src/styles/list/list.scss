@@ -1,0 +1,34 @@
+ul, ol {
+  margin-bottom: 1.2rem;
+  counter-reset: item;
+  padding-left: 1.5rem;
+  list-style-type: none;
+
+  li{
+    margin-bottom: .5rem;
+
+    &:before{
+      font-weight: bold;
+    }
+  }
+}
+
+ol{
+  & > li:before {
+    position: absolute;
+    margin: 0 0 0 -1.5em;
+    content: counter(item) '.';
+    counter-increment: item;
+    color: $primary;
+  }
+}
+
+ul{
+  & > li:before {
+    color: $primary;
+    content: '\2014';
+    margin: 0 .5rem 0 -1.5rem;
+  }
+}
+
+

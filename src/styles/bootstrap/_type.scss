@@ -38,6 +38,14 @@ h4, .h4 {
 h5, .h5 { font-size: $h5-font-size; }
 h6, .h6 { font-size: $h6-font-size; }
 
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h1+h2, h2+h3, h3+h4, h4+h5 {
+  margin-top: 0;
+}
+
 .lead {
   font-size: $lead-font-size;
   font-weight: $lead-font-weight;

@@ -4,5 +4,7 @@
 
 @import "styles/bootstrap/bootstrap";
 
-@import "styles/links/links"; /** Custom style link system / Система для управления ссылками на сайте */
 @import "styles/layout/layout";
+@import "styles/links/links"; /** Custom style link system / Система для управления ссылками на сайте */
+@import "styles/list/list"; /** Custom style ul-ol list system / Стили для списков */
+
