@@ -7,10 +7,10 @@ import { environment } from '@environments/environment';
 import { AppComponent } from './app.component';
 import {SharedModule} from '@shared';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 import { GuidelineComponent } from './guideline/guideline.component';
-import {AuthModule} from "./auth/auth.module";
-import {RouterModule} from "@angular/router";
+import {AuthModule} from './auth/auth.module';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({

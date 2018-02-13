@@ -1,4 +1,13 @@
+@import '../../styles/bootstrap/functions';
+@import '../../styles/bootstrap/variables';
+
 .container-fluid--layout{
-  padding-left: 45px;
-  padding-right: 45px;
+  padding-left: $grid-layout-padding;
+  padding-right: $grid-layout-padding;
+}
+
+.container-fluid--content{
+  padding-top: $grid-layout-padding;
+  padding-bottom: $grid-layout-padding;
+  min-height: calc(100vh - 128px); // 128px = footer + header height
 }

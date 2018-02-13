@@ -31,10 +31,8 @@ export class AuthService {
           this.alertService.showToaster('Verification email is sent to you.');
           this.userService.verificationUserEmail();
           this.userService.saveUserInfo(firebase.auth().currentUser.uid, name, firebase.auth().currentUser.email);
-        }
-      )
-      .catch(
-        error => console.log(error),
+      }).catch(
+        error => console.log(error)
       );
   }
 
@@ -78,7 +76,7 @@ export class AuthService {
         }
       )
       .catch((error) => {
-        error => console.log(error)
+        this.alertService.showToaster(error);
       });
   }
 
@@ -170,7 +168,7 @@ export class AuthService {
         }
       )
       .catch((error) => {
-        error => console.log(error)
+        this.alertService.showToaster(error);
       });
   }
 
@@ -205,7 +203,7 @@ export class AuthService {
             .then(
               (token: string) => this.token = token
             );
-          this.alertService.showToaster('Login succesful');
+          this.alertService.showToaster('Login successful');
         }
       )
       .catch(
@@ -217,7 +215,7 @@ export class AuthService {
     firebase.auth().signInAnonymously()
       .then(
         response => {
-          this.router.navigate(['/'])
+          this.router.navigate(['/']);
           firebase.auth().onAuthStateChanged(currentUser => {
             const isAnonymous = currentUser.isAnonymous;
             const uid = currentUser.uid;
@@ -225,9 +223,9 @@ export class AuthService {
               .then(
                 (token: string) => this.token = token
               ),
-              this.alertService.showToaster('Anonymous login succesful');
-            console.log(currentUser);
-          })
+              this.alertService.showToaster('Anonymous login successful');
+              console.log(currentUser);
+          });
         }
       )
       .catch(

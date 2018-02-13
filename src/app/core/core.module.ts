@@ -2,10 +2,10 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LogService } from '@services/log/log.service';
-import {AuthService} from "@services/auth/auth.service";
-import {AuthGuardService} from "@services/auth/auth-guard.service";
-import {AlertService} from "@services/alert/alert.service";
-import {UserService} from "@services/user/user.service";
+import {AuthService} from '@services/auth/auth.service';
+import {AuthGuardService} from '@services/auth/auth-guard.service';
+import {AlertService} from '@services/alert/alert.service';
+import {UserService} from '@services/user/user.service';
 
 
 @NgModule({

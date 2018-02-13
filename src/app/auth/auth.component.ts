@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AuthService} from "@services/auth/auth.service";
-import {AlertService} from "@services/alert/alert.service";
-import {NgForm} from "@angular/forms";
+import {AuthService} from '@services/auth/auth.service';
+import {AlertService} from '@services/alert/alert.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-auth',

@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCbYBd3Gu_fExn3_buzlP_Q4Yxu8U8Tz7U",
-    authDomain: "madbrothers-auth.firebaseapp.com",
-    databaseURL: "https://madbrothers-auth.firebaseio.com",
-    projectId: "madbrothers-auth",
-    storageBucket: "madbrothers-auth.appspot.com",
-    messagingSenderId: "574391449346"
+    apiKey: 'AIzaSyCbYBd3Gu_fExn3_buzlP_Q4Yxu8U8Tz7U',
+    authDomain: 'madbrothers-auth.firebaseapp.com',
+    databaseURL: 'https://madbrothers-auth.firebaseio.com',
+    projectId: 'madbrothers-auth',
+    storageBucket: 'madbrothers-auth.appspot.com',
+    messagingSenderId: '574391449346'
   }
 };

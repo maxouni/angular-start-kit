@@ -62,8 +62,8 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       #e0ce25 !default;
+$secondary:     #f3f7ff !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -196,6 +196,7 @@ $container-max-widths: (
 
 $grid-columns:                12 !default;
 $grid-gutter-width:           30px !default;
+$grid-layout-padding: 45px !default;
 
 // Components
 //
@@ -877,7 +878,7 @@ $close-text-shadow:                 0 1px 0 $white !default;
 // Code
 
 $code-font-size:                    87.5% !default;
-$code-color:                        $pink !default;
+$code-color:                        $green !default;
 
 $kbd-padding-y:                     .2rem !default;
 $kbd-padding-x:                     .4rem !default;
