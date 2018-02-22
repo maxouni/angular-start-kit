@@ -1,4 +1,7 @@
-# TurnirPro
+# Angular Start Kit
+Набор инструментов на основе Bootstar и Angular для быстрого разворачивания проекта.
+
+Демо `https://angular-start-kit.herokuapp.com/`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
