@@ -1,0 +1,17 @@
+.foldable {
+  position: relative;
+  margin-bottom: 45px;
+
+  &__content{
+    transition: max-height .4s ease;
+    overflow: hidden;
+  }
+
+  &--open &__content{
+    max-height: none;
+  }
+
+  &__opener {
+    margin-top: 15px;
+  }
+}

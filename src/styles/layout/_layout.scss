@@ -1,5 +1,6 @@
 @import '../../styles/bootstrap/functions';
 @import '../../styles/bootstrap/variables';
+@import "../../styles/bootstrap/mixins/breakpoints";
 
 .container-fluid--layout{
   padding-left: $grid-layout-padding;

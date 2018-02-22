@@ -65,7 +65,7 @@ $colors: map-merge((
 $primary:       #e0ce25 !default;
 $secondary:     #f3f7ff !default;
 $success:       $green !default;
-$info:          $cyan !default;
+$info:          $secondary !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
@@ -100,7 +100,7 @@ $yiq-text-light: $white !default;
 
 $enable-caret:              true !default;
 $enable-rounded:            true !default;
-$enable-shadows:            false !default;
+$enable-shadows:            true !default;
 $enable-gradients:          false !default;
 $enable-transitions:        true !default;
 $enable-hover-media-query:  false !default; // Deprecated, no longer affects any compiled CSS
@@ -351,7 +351,7 @@ $btn-padding-x:               $input-btn-padding-x !default;
 $btn-line-height:             $input-btn-line-height !default;
 
 $btn-padding-y-sm:            $input-btn-padding-y-sm !default;
-$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
+$btn-padding-x-sm:            10px !default;
 $btn-line-height-sm:          $input-btn-line-height-sm !default;
 
 $btn-padding-y-lg:            $input-btn-padding-y-lg !default;

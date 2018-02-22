@@ -6,13 +6,15 @@
 
 .btn {
   display: inline-block;
-  font-weight: $btn-font-weight;
+  position: relative;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  border: $btn-border-width solid transparent;
-  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+  font-weight: 300;
+  letter-spacing: .4px;
+  border: 1px solid $primary;
+  @include button-size(15px, 27px, 1rem, 16px, 0);
   @include transition($btn-transition);
 
   // Share hover and focus styles
@@ -23,7 +25,6 @@
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: $btn-focus-box-shadow;
   }
 
   // Disabled comes first so active can properly restyle
@@ -40,12 +41,13 @@
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active {
-    background-image: none;
     @include box-shadow($btn-active-box-shadow);
+  }
 
-    &:focus {
-      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
-    }
+  @include button-variant($white, $white ,$primary, $primary);
+
+  &--secondary{
+    @include button-variant($primary, $white , transparent, $primary, $primary, $primary, $primary, $primary);
   }
 }
 
@@ -55,45 +57,14 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-
-//
-// Alternate buttons
-//
-
-@each $color, $value in $theme-colors {
-  .btn-#{$color} {
-    @include button-variant($value, $value);
-  }
-}
-
-@each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
-    @include button-outline-variant($value);
-  }
-}
-
-
-//
-// Link buttons
-//
-
-// Make a button look and behave like a link
+/** Link buttons
+  * Make a button look and behave like a link
+  */
 .btn-link {
-  font-weight: $font-weight-normal;
-  color: $link-color;
-  background-color: transparent;
-
-  @include hover {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
-    background-color: transparent;
-    border-color: transparent;
-  }
 
   &:focus,
+  &:active,
   &.focus {
-    text-decoration: $link-hover-decoration;
-    border-color: transparent;
     box-shadow: none;
   }
 
@@ -101,28 +72,18 @@ fieldset:disabled a.btn {
   &.disabled {
     color: $btn-link-disabled-color;
   }
-
-  // No need for an active state here
 }
 
-
-//
-// Button Sizes
-//
-
-.btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+/** Sizes */
+.btn--lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, 4px);
 }
 
-.btn-sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+.btn--sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, 4px);
 }
 
-
-//
-// Block button
-//
-
+/** Block button */
 .btn-block {
   display: block;
   width: 100%;

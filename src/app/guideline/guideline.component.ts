@@ -9,6 +9,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 export class GuidelineComponent implements OnInit {
 
   public deviceInfo: any;
+  public isShowFoldable: boolean;
 
   constructor(private deviceService: DeviceDetectorService) { }
 
