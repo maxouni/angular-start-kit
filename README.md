@@ -31,6 +31,15 @@
     /src/environments/environments.ts
   ```
 
+###### Heroku
+Для того, что бы, сделать разные базы firebase для разных серверов, например, для продакшена и теста. 
+Необходимо прописать настройки в переменных окружения сервера. 
+При билде проекта файл /src/environments/environments.ts будет переписан переменными сервера
+
+![variables](https://github.com/maxouni/angular-start-kit/tree/master/src/assets/instructions/variables.png "Variables sample")
+ 
+ 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
