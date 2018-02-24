@@ -8,11 +8,11 @@ export const environment = {
 
   /* https://firebase.google.com/ */
   firebase: {
-    apiKey: null,
-    authDomain: null,
-    databaseURL: null,
-    projectId: null,
-    storageBucket: null,
-    messagingSenderId: null
+    apiKey: 'FIREBASEawdawdAPI/usr/local/bin/nodeKEY',
+    authDomain: 'FIREBASE_AUTH_DOMAIN',
+    databaseURL: 'FIREBASE_DATABASE_URL',
+    projectId: 'FIREBASE_PROJECT_ID',
+    storageBucket: 'FIREBASE_STORAGE_BUCKET',
+    messagingSenderId: 'FIREBAESE_SENDER_ID'
   }
 };
