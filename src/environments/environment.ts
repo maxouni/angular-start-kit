@@ -5,12 +5,14 @@
 
 export const environment = {
   production: false,
+
+  /* https://firebase.google.com/ */
   firebase: {
-    apiKey: 'AIzaSyCbYBd3Gu_fExn3_buzlP_Q4Yxu8U8Tz7U',
-    authDomain: 'madbrothers-auth.firebaseapp.com',
-    databaseURL: 'https://madbrothers-auth.firebaseio.com',
-    projectId: 'madbrothers-auth',
-    storageBucket: 'madbrothers-auth.appspot.com',
-    messagingSenderId: '574391449346'
+    apiKey: null,
+    authDomain: null,
+    databaseURL: null,
+    projectId: null,
+    storageBucket: null,
+    messagingSenderId: null
   }
 };
