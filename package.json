@@ -14,7 +14,8 @@
     "lint": "ng lint",
     "start-dev": "node server.js",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --aot --op=./dist"
+    "apply-env": "node ./env.js",
+    "heroku-postbuild": "npm run apply-env && ng build --aot --op=./dist"
   },
   "private": true,
   "dependencies": {

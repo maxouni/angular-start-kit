@@ -3,6 +3,43 @@
 
 Демо [https://angular-start-kit.herokuapp.com/](https://angular-start-kit.herokuapp.com/)
 
+
+
+## Конфигурация
+
+#### [Firebase](https://firebase.google.com/)
+Готовая система авторизации. С готовой инфраструктурой верификации телефонных номеров и адресов электронной почты.
+Бесплаьный план позволит развернуть приложение и зупустить в тестовом режиме.
+
+- Заводим учетную запись
+- В настройках проекта находим блок "Ваши приложения"
+- Выбираем пункт "Добавьте Firebase в свое веб-приложение"
+- В попапе копируем конфиги для соединения с БД
+
+  ```
+    apiKey: "madmadmadmadmadmadmadmadmadmadmadmadmad",
+    authDomain: "mad-example.firebaseapp.com",
+    databaseURL: "https://mad-example.firebaseio.com",
+    projectId: "mad-example",
+    storageBucket: "mad-example.appspot.com",
+    messagingSenderId: "666666666666"
+  ```
+
+- Вставляем настройки в файл с переменными окружения
+
+  ```
+    /src/environments/environments.ts
+  ```
+
+###### Heroku
+Для того, что бы, сделать разные базы firebase для разных серверов, например, для продакшена и теста. 
+Необходимо прописать настройки в переменных окружения сервера. 
+При билде проекта файл /src/environments/environments.ts будет переписан переменными сервера
+
+![variables](https://github.com/maxouni/angular-start-kit/tree/master/src/assets/instructions/variables.png "Variables sample")
+ 
+ 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
