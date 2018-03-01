@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col">
       <h2>Войти через социальные сети</h2>
-      <form (ngSubmit)="onSignInGoogle(g)" #g="ngForm">
-        <button class="btn" type="submit" [disabled]="!g.valid"><span class="icon icon-google-plus"></span></button>
+      <form #g="ngForm">
+        <span class="pseudo pseudo--border-off" (click)="onSignInGoogle(g)"><i class="icon icon-google-plus"></i></span>
+      </form>
+      <form #fb="ngForm">
+        <span class="pseudo pseudo--border-off" (click)="onSignInFacebook(fb)"><i class="icon icon-facebook"></i></span>
       </form>
       <!--<form (ngSubmit)="onSignInTwitter(t)" #t="ngForm">-->
         <!--<button class="btn btn-block btn-social btn-twitter" type="submit" [disabled]="!t.valid"><span class="fa fa-twitter"></span> Login with your Twitter Account</button>-->
       <!--</form>-->
-      <form (ngSubmit)="onSignInFacebook(fb)" #fb="ngForm">
-        <button class="btn" type="submit" [disabled]="!fb.valid"><span class="icon icon-facebook"></span></button>
-      </form>
       <!--<form (ngSubmit)="onSignInGithub(gh)" #gh="ngForm">-->
         <!--<button class="btn btn-block btn-social btn-github" type="submit" [disabled]="!gh.valid"><span class="fa fa-github"></span> Login with your Github Account</button>-->
       <!--</form>-->
