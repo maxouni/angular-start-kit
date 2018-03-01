@@ -5,6 +5,7 @@
   &__content{
     transition: max-height .4s ease;
     overflow: hidden;
+    max-height: 145px;
   }
 
   &--open &__content{
