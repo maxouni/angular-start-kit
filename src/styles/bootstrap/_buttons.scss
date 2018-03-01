@@ -46,7 +46,7 @@
 
   @include button-variant($white, $white ,$primary, $primary);
 
-  &--secondary{
+  &-outline{
     @include button-variant($primary, $white , transparent, $primary, $primary, $primary, $primary, $primary);
   }
 }
@@ -75,11 +75,11 @@ fieldset:disabled a.btn {
 }
 
 /** Sizes */
-.btn--lg {
+.btn-lg {
   @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, 4px);
 }
 
-.btn--sm {
+.btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, 4px);
 }
 
