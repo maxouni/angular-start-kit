@@ -2,6 +2,11 @@ form{
   display: inline-block;
   margin-right: 10px;
 
+  &.auth{
+    display: block;
+    width: 400px;
+  }
+
   .icon{
     font-size: 36px;
   }

@@ -1,13 +1,41 @@
 <div class="container-fluid container-fluid--layout container-fluid--content">
   <div class="row">
     <div class="col">
-      <h2>Войти через социальные сети</h2>
-      <form #g="ngForm">
-        <span class="pseudo pseudo--border-off" (click)="onSignInGoogle(g)"><i class="icon icon-google-plus"></i></span>
+      <form [formGroup]="authForm" class="auth">
+        <div class="form-group">
+          <label for="email">Эл. почта</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            id="email"
+            name="email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="password"
+            name="password" />
+        </div>
+        <div class="form-group d-flex flex-row flex-wrap justify-content-between">
+          <button (click)="onSignin()" [disabled]="loading || authForm.status !== 'VALID'" class="btn btn-md">Войти в систему</button>
+          <div class=" d-flex flex-wrap flex-row justify-content-end">
+          <form #g="ngForm">
+            <span class="pseudo pseudo--border-off" (click)="onSignInGoogle(g)"><i
+              class="icon icon-google-plus"></i></span>
+          </form>
+
+          <form #fb="ngForm">
+            <span class="pseudo pseudo--border-off" (click)="onSignInFacebook(fb)"><i
+              class="icon icon-facebook"></i></span>
+          </form>
+          </div>
+        </div>
       </form>
-      <form #fb="ngForm">
-        <span class="pseudo pseudo--border-off" (click)="onSignInFacebook(fb)"><i class="icon icon-facebook"></i></span>
-      </form>
+
       <!--<form (ngSubmit)="onSignInTwitter(t)" #t="ngForm">-->
         <!--<button class="btn btn-block btn-social btn-twitter" type="submit" [disabled]="!t.valid"><span class="fa fa-twitter"></span> Login with your Twitter Account</button>-->
       <!--</form>-->

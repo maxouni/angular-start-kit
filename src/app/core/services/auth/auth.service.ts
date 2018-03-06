@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 
 import { AlertService } from '@services/alert/alert.service';
 import { UserService } from '@services/user/user.service';
+import {LogService} from '@services/log/log.service';
 
 @Injectable()
 export class AuthService {
@@ -12,6 +13,7 @@ export class AuthService {
   constructor(
     private router: Router,
     private alertService: AlertService,
+    private log: LogService,
     private userService: UserService) { }
 
   // Signup/register
@@ -203,7 +205,7 @@ export class AuthService {
             .then(
               (token: string) => this.token = token
             );
-          this.alertService.showToaster('Login successful');
+          this.log.green('Login successful');
         }
       )
       .catch(

@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from '@services/auth/auth.service';
 import {AlertService} from '@services/alert/alert.service';
 import {NgForm} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {LogService} from '@services/log/log.service';
 
 @Component({
   selector: 'app-auth',
@@ -11,14 +13,27 @@ import {NgForm} from '@angular/forms';
 export class AuthComponent implements OnInit {
 
   @Input() loading = false;
+  public authForm: FormGroup;
 
   constructor(
     private authService: AuthService,
+    private fb: FormBuilder,
+    private log: LogService,
     private alertService: AlertService) {
   }
 
   ngOnInit() {
-
+    this.authForm = this.fb.group({
+      'email': this.fb.control('', [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.email
+      ]),
+      'password': this.fb.control('', [
+        Validators.required,
+        Validators.minLength(8),
+      ])
+    });
   }
 
   public onSignInGoogle(form: NgForm): void {
@@ -42,9 +57,13 @@ export class AuthComponent implements OnInit {
   }
 
   onSignin(form: NgForm) {
+
     this.loading = true;
-    const email = form.value.email;
-    const password = form.value.password;
+    const email = this.authForm.get('email').value;
+    const password = this.authForm.get('password').value;
+
+    // window.console.log(this.authForm.get('email').value);
+    // window.console.log(this.authForm.get('password').value);
     this.authService.signinUser(email, password);
   }
 
