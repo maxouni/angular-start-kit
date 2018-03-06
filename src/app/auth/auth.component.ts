@@ -41,29 +41,25 @@ export class AuthComponent implements OnInit {
     this.authService.signInWithGoogle();
   }
 
-  onSignInTwitter(form: NgForm) {
+  public onSignInTwitter(form: NgForm): void {
     this.loading = true;
     this.authService.signInWithTwitter();
   }
 
-  onSignInFacebook(form: NgForm) {
+  public onSignInFacebook(form: NgForm): void {
     this.loading = true;
     this.authService.signInWithFacebook();
   }
 
-  onSignInGithub(form: NgForm) {
+  public onSignInGithub(form: NgForm): void {
     this.loading = true;
     this.authService.signInWithGithub();
   }
 
-  onSignin(form: NgForm) {
-
+  public onSignin(): void {
     this.loading = true;
     const email = this.authForm.get('email').value;
     const password = this.authForm.get('password').value;
-
-    // window.console.log(this.authForm.get('email').value);
-    // window.console.log(this.authForm.get('password').value);
     this.authService.signinUser(email, password);
   }
 
