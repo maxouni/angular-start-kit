@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '@shared';
 
 import { PersonalRoutingModule } from './personal-routing.module';
+import { PersonalComponent } from './personal.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,6 @@ import { PersonalRoutingModule } from './personal-routing.module';
     PersonalRoutingModule,
     SharedModule
   ],
-  declarations: []
+  declarations: [PersonalComponent]
 })
 export class PersonalModule { }
