@@ -4,6 +4,7 @@ import {AlertService} from '@services/alert/alert.service';
 import {NgForm} from '@angular/forms';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {LogService} from '@services/log/log.service';
+import {AuthError} from '@models/auth-error';
 
 @Component({
   selector: 'app-auth',
@@ -12,17 +13,28 @@ import {LogService} from '@services/log/log.service';
 })
 export class AuthComponent implements OnInit {
 
-  @Input() loading = false;
+  public loading = false;
   public authForm: FormGroup;
+  public error: AuthError;
 
   constructor(
     private authService: AuthService,
-    private fb: FormBuilder,
-    private log: LogService,
-    private alertService: AlertService) {
+    private fb: FormBuilder
+    ) {
   }
 
   ngOnInit() {
+
+    this.authService.error.subscribe(error => {
+      this.loading = false;
+      this.error = error;
+    });
+
+    this.authService.auth.subscribe(auth => {
+      this.loading = false;
+      this.error = null;
+    });
+
     this.authForm = this.fb.group({
       'email': this.fb.control('', [
         Validators.required,
@@ -60,7 +72,7 @@ export class AuthComponent implements OnInit {
     this.loading = true;
     const email = this.authForm.get('email').value;
     const password = this.authForm.get('password').value;
-    this.authService.signinUser(email, password);
+    this.authService.signInUser(email, password);
   }
 
   onSigninAnonymous(form: NgForm) {

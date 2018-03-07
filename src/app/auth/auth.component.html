@@ -35,6 +35,7 @@
           </div>
         </div>
       </form>
+      <div class="text-danger" *ngIf="error && !loading">{{error.message}}</div>
 
       <!--<form (ngSubmit)="onSignInTwitter(t)" #t="ngForm">-->
         <!--<button class="btn btn-block btn-social btn-twitter" type="submit" [disabled]="!t.valid"><span class="fa fa-twitter"></span> Login with your Twitter Account</button>-->

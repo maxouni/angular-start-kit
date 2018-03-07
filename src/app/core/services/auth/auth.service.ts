@@ -5,10 +5,17 @@ import * as firebase from 'firebase';
 import { AlertService } from '@services/alert/alert.service';
 import { UserService } from '@services/user/user.service';
 import {LogService} from '@services/log/log.service';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {Observable} from 'rxjs/Observable';
+import {filter} from 'rxjs/operators';
+import {AuthError} from '@models/auth-error';
 
 @Injectable()
 export class AuthService {
   token: string;
+
+  private auth$ = new BehaviorSubject<boolean>(null);
+  private error$ = new BehaviorSubject<AuthError>(null);
 
   constructor(
     private router: Router,
@@ -195,21 +202,24 @@ export class AuthService {
       );
   }
 
-  signinUser(email: string, password: string) {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+  public signInUser(email: string, password: string) {
+     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(
         response => {
           this.router.navigate(['/']);
-          // firebase.auth().currentUser.getToken()
           firebase.auth().currentUser.getIdToken()
             .then(
               (token: string) => this.token = token
             );
+          this.auth$.next(true);
           this.log.green('Login successful');
         }
       )
       .catch(
-        error => console.log(error)
+        error => {
+          this.error$.next(error);
+          this.log.red(error.message);
+        }
       );
   }
 
@@ -259,5 +269,13 @@ export class AuthService {
 
   isAuthenticated() {
     return this.token != null;
+  }
+
+  public get auth(): Observable<boolean> {
+    return this.auth$.asObservable().pipe(filter(result => !!result));
+  }
+
+  public get error(): Observable<AuthError> {
+    return this.error$.asObservable().pipe(filter(result => !!result));
   }
 }
