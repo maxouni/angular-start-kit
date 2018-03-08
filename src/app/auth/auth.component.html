@@ -1,6 +1,7 @@
 <div class="container-fluid container-fluid--layout container-fluid--content">
   <div class="row">
-    <div class="col">
+    <div class="col-12 col-md-8">
+      <h2>Авторизация</h2>
       <form [formGroup]="authForm" class="auth">
         <div class="form-group">
           <label for="email">Эл. почта</label>
@@ -44,5 +45,9 @@
         <!--<button class="btn btn-block btn-social btn-github" type="submit" [disabled]="!gh.valid"><span class="fa fa-github"></span> Login with your Github Account</button>-->
       <!--</form>-->
     </div>
+    <aside class="col-12 col-md-3 offset-md-1">
+      <p><a routerLink="/registration">Регистрация</a></p>
+      <p><a routerLink="/forgot">Восстановление пароля</a></p>
+    </aside>
   </div>
 </div>

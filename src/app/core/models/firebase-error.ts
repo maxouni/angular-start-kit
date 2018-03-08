@@ -1,4 +1,4 @@
-export class AuthError {
+export class FirebaseError {
   code: string;
   message: string;
 }

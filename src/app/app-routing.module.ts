@@ -2,7 +2,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {AuthGuardService} from '@services/auth/auth-guard.service';
 import {GuidelineComponent} from './guideline/guideline.component';
-import {AuthComponent} from './auth/auth.component';
 
 const routes: Routes = [
     {
@@ -16,7 +15,15 @@ const routes: Routes = [
     },
     {
       path: 'auth', // Страница входа в систему,
-      component: AuthComponent
+      loadChildren: 'app/auth/auth.module#AuthModule'
+    },
+    {
+      path: 'forgot', // Страница восстановления пароля
+      loadChildren: 'app/forgot/forgot.module#ForgotModule'
+    },
+    {
+      path: 'registration', // Страница регистрации
+      loadChildren: 'app/registration/registration.module#RegistrationModule'
     },
     {
       path: '', // Главная страница

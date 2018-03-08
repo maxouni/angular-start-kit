@@ -1,0 +1,26 @@
+<div class="container-fluid container-fluid--layout container-fluid--content">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <h2>Восстановление пароля</h2>
+      <form [formGroup]="forgotForm" class="forgot">
+        <div class="form-group">
+          <label for="email">Эл. почта</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            id="email"
+            name="email" />
+        </div>
+        <div class="form-group d-flex flex-row flex-wrap justify-content-between">
+          <button [disabled]="loading || forgotForm.status !== 'VALID'" class="btn btn-md">Отправить пароль на эл. почту</button>
+        </div>
+      </form>
+      <div class="text-danger" *ngIf="error && !loading">{{error.message}}</div>
+    </div>
+    <aside class="col-12 col-md-3 offset-md-1">
+      <p><a routerLink="/auth">Авторизация</a></p>
+      <p><a routerLink="/registration">Регистрация</a></p>
+    </aside>
+  </div>
+</div>

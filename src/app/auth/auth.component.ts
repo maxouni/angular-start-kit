@@ -1,10 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from '@services/auth/auth.service';
-import {AlertService} from '@services/alert/alert.service';
 import {NgForm} from '@angular/forms';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LogService} from '@services/log/log.service';
-import {AuthError} from '@models/auth-error';
+import {FirebaseError} from '@models/firebase-error';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +14,7 @@ export class AuthComponent implements OnInit {
 
   public loading = false;
   public authForm: FormGroup;
-  public error: AuthError;
+  public error: FirebaseError;
 
   constructor(
     private authService: AuthService,

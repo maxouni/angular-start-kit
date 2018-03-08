@@ -8,14 +8,14 @@ import {LogService} from '@services/log/log.service';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 import {filter} from 'rxjs/operators';
-import {AuthError} from '@models/auth-error';
+import {FirebaseError} from '@models/firebase-error';
 
 @Injectable()
 export class AuthService {
   token: string;
 
   private auth$ = new BehaviorSubject<boolean>(null);
-  private error$ = new BehaviorSubject<AuthError>(null);
+  private error$ = new BehaviorSubject<FirebaseError>(null);
 
   constructor(
     private router: Router,
@@ -275,7 +275,7 @@ export class AuthService {
     return this.auth$.asObservable().pipe(filter(result => !!result));
   }
 
-  public get error(): Observable<AuthError> {
+  public get error(): Observable<FirebaseError> {
     return this.error$.asObservable().pipe(filter(result => !!result));
   }
 }

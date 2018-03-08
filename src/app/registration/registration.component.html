@@ -1,0 +1,44 @@
+<div class="container-fluid container-fluid--layout container-fluid--content">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <h2>Регистрация</h2>
+      <form [formGroup]="registerForm" class="register">
+        <div class="form-group">
+          <label for="email">Эл. почта</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            id="email"
+            name="email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="password"
+            name="password" />
+        </div>
+        <div class="form-group">
+          <label for="password">Подтверждение пароля</label>
+          <input
+            formControlName="password_confirm"
+            type="password"
+            class="form-control"
+            id="password_confirm"
+            name="password_confirm" />
+        </div>
+        <div class="form-group d-flex flex-row flex-wrap justify-content-between">
+          <button  [disabled]="loading || registerForm.status !== 'VALID'" class="btn btn-md">Регистрация</button>
+        </div>
+      </form>
+      <div class="text-danger" *ngIf="error && !loading">{{error.message}}</div>
+    </div>
+    <aside class="col-12 col-md-3 offset-md-1">
+      <p><a routerLink="/auth">Авторизация</a></p>
+      <p><a routerLink="/forgot">Восстановление пароля</a></p>
+    </aside>
+  </div>
+</div>
