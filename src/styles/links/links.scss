@@ -89,8 +89,7 @@ a.active {
   @include link-color($link-color);
   text-decoration: none;
 
-  &:hover,
-  &:focus {
+  &:hover{
     transition: color 0s, border-bottom 0s;
     text-decoration: none;
     @include link-color($link-hover-color, $important: true);

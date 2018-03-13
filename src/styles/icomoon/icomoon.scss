@@ -26,16 +26,28 @@
 
 .icon-google-plus:before {
   content: "\ea8c";
-  color: #d34836;
 }
 .icon-facebook:before {
   content: "\ea91";
-  color: #3b5998;
 }
 .icon-twitter:before {
   content: "\ea96";
-  color: #55acee;
 }
 .icon-github:before {
   content: "\eab0";
+}
+.icon-file-empty:before {
+  content: "\e924";
+}
+.icon-file-picture:before {
+  content: "\e927";
+}
+.icon-file-pdf:before {
+  content: "\eadf";
+}
+.icon-file-word:before {
+  content: "\eae1";
+}
+.icon-file-excel:before {
+  content: "\eae2";
 }

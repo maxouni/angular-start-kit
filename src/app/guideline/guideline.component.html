@@ -109,6 +109,17 @@
       <h2>Форма с валидацией</h2>
       <p>Скоро она тут будет.</p>
 
+      <h2>Файлы для скачивания</h2>
+      <div class="row">
+        <div class="col-12 col-md-4" *ngFor="let file of files;trackBy:identify">
+          <div class="file">
+            <div class="file__title"><a [download]="file.title" [href]="file.link" target="_blank"
+            class="a--brand a--border-off no_visited"><i [ngClass]="'icon--' + file.ext" class="icon"></i>{{file.title}}</a></div>
+            <div class="file__size">{{file.ext | uppercase}},&nbsp;{{file.display_size | uppercase}}</div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <aside class="col col-md-3 offset-md-1">
       <h3>Кнопки используемые на&nbsp;сайте</h3>

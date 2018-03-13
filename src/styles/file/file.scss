@@ -1,0 +1,54 @@
+.file {
+  margin: 0 0 2.5rem;
+  min-height: 70px;
+  padding-left: 73px;
+  display: flex;
+  flex-flow: column wrap;
+  position: relative;
+  justify-content: center;
+
+  &__title{
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .icon {
+    position: absolute;
+    margin-right: 10px;
+    left: 0;
+    top: 0;
+    font-size: 60px;
+  }
+
+  &__size{
+    font-size: 15px;
+    color: #AEAEAE;
+    line-height: 18px;
+    width: 100%;
+  }
+
+  .icon{
+    @extend .icon-file-empty;
+
+    &--pdf{
+      @extend .icon-file-pdf;
+    }
+
+    &--docx,
+    &--doc{
+      @extend .icon-file-word;
+    }
+
+    &--xlsx,
+    &--xls{
+      @extend .icon-file-excel;
+    }
+
+    &--jpg,
+    &--png{
+      @extend .icon-file-picture;
+    }
+  }
+}
