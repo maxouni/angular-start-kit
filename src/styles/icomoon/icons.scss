@@ -1,0 +1,23 @@
+// Script-generated file, do not modify by hand
+
+$icon-google-plus-content: "\ea8c";
+$icon-facebook-content: "\ea91";
+$icon-twitter-content: "\ea96";
+$icon-github-content: "\eab0";
+$icon-file-empty-content: "\e924";
+$icon-file-picture-content: "\e927";
+$icon-file-pdf-content: "\eadf";
+$icon-file-word-content: "\eae1";
+$icon-file-excel-content: "\eae2";
+
+@mixin icon-classes {
+    .icon-google-plus:before { content: $icon-google-plus-content; }
+    .icon-facebook:before { content: $icon-facebook-content; }
+    .icon-twitter:before { content: $icon-twitter-content; }
+    .icon-github:before { content: $icon-github-content; }
+    .icon-file-empty:before { content: $icon-file-empty-content; }
+    .icon-file-picture:before { content: $icon-file-picture-content; }
+    .icon-file-pdf:before { content: $icon-file-pdf-content; }
+    .icon-file-word:before { content: $icon-file-word-content; }
+    .icon-file-excel:before { content: $icon-file-excel-content; }
+}

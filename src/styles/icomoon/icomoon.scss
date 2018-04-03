@@ -1,3 +1,5 @@
+@import 'icons.scss';
+
 @font-face {
   font-family: 'icomoon';
   src:  url('/assets/fonts/icomoon.eot?5ny50l');
@@ -24,30 +26,4 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-google-plus:before {
-  content: "\ea8c";
-}
-.icon-facebook:before {
-  content: "\ea91";
-}
-.icon-twitter:before {
-  content: "\ea96";
-}
-.icon-github:before {
-  content: "\eab0";
-}
-.icon-file-empty:before {
-  content: "\e924";
-}
-.icon-file-picture:before {
-  content: "\e927";
-}
-.icon-file-pdf:before {
-  content: "\eadf";
-}
-.icon-file-word:before {
-  content: "\eae1";
-}
-.icon-file-excel:before {
-  content: "\eae2";
-}
+@include icon-classes();
